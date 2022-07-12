@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  node:
+    build: .
+    container_name: "db2_express_api"
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/usr/src/app
