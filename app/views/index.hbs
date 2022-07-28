@@ -1,1 +1,19 @@
-<h1>Teste: {{ title }}</h1>
+<section class="mx-auto w-4/6">
+    <div class="my-4 flex justify-end">
+        {{> searchbar}}
+    </div>
+    <section>
+        {{> label size="xl" text="Eventos em andamento" iconName="clock"}}
+        <div id="gri-wrapper" class="mt-4">
+            {{#if events}}
+                {{#> grid type="cols" size="3" gx="2" gy="2"}}
+                    {{#each events}}
+                        {{> card this}}
+                    {{/each}}
+                {{/grid}}            
+            {{else}}
+                sem eventos
+            {{/if}}
+        </div>
+    </section>
+</section>

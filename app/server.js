@@ -1,6 +1,6 @@
 import express from "express"; 
 import bodyParser from 'body-parser';
-import { engine } from "express-handlebars";
+import { create, engine } from "express-handlebars";
 import { router } from "./routes/routes.js";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -15,7 +15,18 @@ const __dirname = path.dirname(__filename);
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
+let hbs = create({});
+
+hbs.handlebars.registerHelper("dateFormatter", function(date) {
+  let day = date.getDate();
+  let month = date.getFullMonth();
+  let year = date.getYear();
+  return new hbs.handlebars.SafeString(`${day}/${month}/${year}`);
+});
+
+
 const app = express();
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 

@@ -1,17 +1,10 @@
-<style>
-    #navbar ul {
-        display: flex;
-    }
-
-    #navbar li {
-        list-style: none;
-        margin: 0 40px;
-    }
-</style>
-
-<nav id="navbar">
-    <ul>
-        <li><a href="/user/all">Mostrar todos os usuarios</a></li>
-        <li><a href="#">*</a></li>
-    </ul>
+<nav class="w-full h-16 bg-navbar text-white flex items-center">
+    <div id="container" class="w-1/12 h-full"></div>
+    <div class="w-full flex justify-end gap-x-12">
+        <div class="text-white hover:text-menu-hover" ><a href="#">{{> icon mx="2" icon="house"}}Home</a></div>
+        <div class="text-white hover:text-menu-hover" ><a href="#">{{> icon mx="2" icon="calendar"}}Events</a></div>
+        <div class="text-white hover:text-menu-hover" ><a href="#">{{> icon mx="2" icon="right-to-bracket"}}Login</a></div>
+        <div class="text-white hover:text-menu-hover" ><a href="#">{{> icon mx="2" icon="user-plus"}}Cadastrar</a></div>
+    </div>
+    <div class="w-1/12"></div>
 </nav>
