@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import UserSchema from '../models/Users/UserSchema.js';
 
 export function index(req, res) {
     res.render('user/index');

@@ -2,9 +2,12 @@
     <div class="my-4 flex justify-end">
         {{> searchbar}}
     </div>
+    {{#if user}}
+        {{name}}
+    {{/if}}
     <section>
         {{> label size="xl" text="Eventos em andamento" iconName="clock"}}
-        <div id="gri-wrapper" class="mt-4">
+        <div id="grid-wrapper" class="mt-4">
             {{#if events}}
                 {{#> grid type="cols" size="3" gx="2" gy="2"}}
                     {{#each events}}
